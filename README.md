@@ -4,19 +4,27 @@ This is a wee graphical application to **visualise the movement of the celestial
 
 [Project page](http://tonisagrista.com/projects/celestial-pole/)
 
-##Download
-You may get a downloadable package that runs on _Windows_ and _Linux_ in http://tonisagrista.com/page/celestial-pole-motion. 
 
-##Run
+## Run from code
+
+In order to run the application, first clone the repository.
+
+```
+$ git clone https://github.com/langurmonkey/celestial-pole-motion.git
+$ cd celestial-pole-motion
+```
 
 To run the application on **Linux**, execute the following command:
 
 ```
-gradlew run
+$ gradlew run
 ```
 
 To run the application on **Windows** systems, run the following:
 
 ```
-gradlew runWindows
+$ gradlew runWindows
 ```
+
+## Download package
+You may get a downloadable package that runs on _Windows_ and _Linux_ in http://tonisagrista.com/page/celestial-pole-motion. 
