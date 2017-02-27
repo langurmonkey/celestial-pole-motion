@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+sourceSets.main.java.srcDirs = ["src/"]
+
+mainClassName = 'astrometry.Main'
+
+dependencies {
+    compile files('lib/commons-math-2.2.jar',
+                    'lib/geodesy-lib.jar',
+                    'lib/lwjgl.jar',
+                    'lib/lwjgl_util.jar',
+                    'lib/slick.jar',
+                    'lib/slick-util.jar')
+}
+
+jar {
+    baseName = 'celestial-pole-motion'
+    version = '1.0.0'
+}
+
+run {
+    jvmArgs '-Djava.library.path=native/linux'
+}
+
+task runWin(dependsOn: jar, type: JavaExec, description: "Runs the application on Windows") {
+    main = project.mainClassName
+    jvmArgs = ['-Djava.library.path=native/windows']
+    classpath = sourceSets.main.runtimeClasspath
+    classpath += files('lib/*')
+}
+
+
+
