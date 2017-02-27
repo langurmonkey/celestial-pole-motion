@@ -28,3 +28,6 @@ $ gradlew runWindows
 
 ## Download package
 You may get a downloadable package that runs on _Windows_ and _Linux_ in http://tonisagrista.com/page/celestial-pole-motion. 
+
+## Licensing
+This software is distributed under the [GPLv3](https://www.gnu.org/licenses/quick-guide-gplv3.html) license.
