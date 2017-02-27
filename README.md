@@ -8,9 +8,15 @@ This is a wee graphical application to **visualise the movement of the celestial
 You may get a downloadable package that runs on _Windows_ and _Linux_ in http://tonisagrista.com/page/celestial-pole-motion. 
 
 ##Run
-In order to run this, compile and execute the Main class. Remember to add the libraries jvm argument, depending on you OS flavour:
 
->-Djava.library.path=native/linux
+To run the application on **Linux**, execute the following command:
 
-or
->-Djava.library.path=native/windows
+```
+gradlew run
+```
+
+To run the application on **Windows** systems, run the following:
+
+```
+gradlew runWindows
+```
