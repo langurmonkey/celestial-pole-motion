@@ -35,4 +35,4 @@ task runWin(dependsOn: jar, type: JavaExec, description: "Runs the application o
 }
 
 
-
+task createWrapper(type: Wrapper) { gradleVersion = "3.4" }
