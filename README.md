@@ -25,9 +25,11 @@ To run the application on **Windows** systems, run the following:
 ```
 $ gradlew runWindows
 ```
+## Project page
+The project page is https://tonisagrista.com/projects/celestial-pole/.
 
 ## Download package
-You may get a downloadable package that runs on _Windows_ and _Linux_ in http://tonisagrista.com/page/celestial-pole-motion. 
+You may get a downloadable package that runs on _Windows_ and _Linux_ in https://tonisagrista.com/projects/celestial-pole/. 
 
 ## Licensing
 This software is distributed under the [GPLv3](https://www.gnu.org/licenses/quick-guide-gplv3.html) license.
