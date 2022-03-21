@@ -1,10 +1,8 @@
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'application'
 
-
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 sourceSets.main.java.srcDirs = ["src/"]
 
 mainClassName = 'astrometry.Main'
@@ -24,6 +22,12 @@ jar {
 }
 
 run {
+    doFirst {
+        if (JavaVersion.current() != project.targetCompatibility) {
+            println "This project needs to be run with Adoptium OpenJRE 1.8!"
+            throw new GradleException("The java version used ${JavaVersion.current()} is not the expected version ${project.targetCompatibility}.")
+        }
+    }
     main = project.mainClassName
     jvmArgs '-Djava.library.path=native/linux'
     classpath = sourceSets.main.runtimeClasspath
