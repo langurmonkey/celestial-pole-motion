@@ -24,7 +24,7 @@ public class GUI extends AbstractComponent implements InputListener {
     public static int height = 110;
 
     TextButton speedUp;
-    TextButton speedDown;
+    TextButton slowDown;
     TextButton restart;
     TextButton pause;
     TextButton euler;
@@ -42,16 +42,16 @@ public class GUI extends AbstractComponent implements InputListener {
 	Font buttonFont = new TrueTypeFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14), true);
 	//North and south
 	speedUp = new TextButton(container, "Speed Up", getCompX(0), getCompY(0), buttonFont);
-	speedDown = new TextButton(container, "Speed Down", getCompX(speedUp.getWidth() + 30), getCompY(0), buttonFont);
+	slowDown = new TextButton(container, "Slow Down", getCompX(speedUp.getWidth() + 30), getCompY(0), buttonFont);
 
 	pause = new TextButton(container, "Pause", getCompX(0), speedUp.getY() + speedUp.getHeight() + 10, buttonFont);
-	restart = new TextButton(container, "Restart", speedDown.getX(), speedUp.getY() + speedUp.getHeight() + 10, buttonFont);
+	restart = new TextButton(container, "Restart", slowDown.getX(), speedUp.getY() + speedUp.getHeight() + 10, buttonFont);
 
 	euler = new TextButton(container, "Angle set: " + getAngleSet(), getCompX(0), pause.getY() + pause.getHeight() + 10, buttonFont);
 
 	hemisphere = new TextButton(container, getHemisphereText(), getCompX(0), euler.getY() + euler.getHeight() + 10, buttonFont);
 
-	close = new TextButton(container, "X", speedDown.getX() + speedDown.getWidth() + 50, getCompY(0), buttonFont);
+	close = new TextButton(container, "X", slowDown.getX() + slowDown.getWidth() + 50, getCompY(0), buttonFont);
 
 	contents = new Rectangle(x - 5, y - 5, width, height);
 	sf = new GradientFill(0, 0, new Color(10, 10, 10, 200), width, 0, new Color(60, 60, 60, 200));
@@ -64,7 +64,7 @@ public class GUI extends AbstractComponent implements InputListener {
 
 	//Render buttons
 	speedUp.render(container, g);
-	speedDown.render(container, g);
+	slowDown.render(container, g);
 	pause.render(container, g);
 	restart.render(container, g);
 	euler.render(container, g);
@@ -76,7 +76,7 @@ public class GUI extends AbstractComponent implements InputListener {
     public void mouseReleased(int button, int x, int y) {
 	if (speedUp.collision(x, y)) {
 	    Parameters.getParams().dt += 10;
-	} else if (speedDown.collision(x, y)) {
+	} else if (slowDown.collision(x, y)) {
 	    Parameters.getParams().dt -= 10;
 	} else if (pause.collision(x, y)) {
 	    if (ac.isPaused()) {
@@ -135,12 +135,12 @@ public class GUI extends AbstractComponent implements InputListener {
 
     @Override
     public int getWidth() {
-	return Math.max(pause.getWidth() + restart.getWidth(), speedUp.getWidth() + speedDown.getWidth());
+	return Math.max(pause.getWidth() + restart.getWidth(), speedUp.getWidth() + slowDown.getWidth());
     }
 
     @Override
     public int getHeight() {
-	return Math.max(pause.getHeight() + restart.getHeight(), speedUp.getHeight() + speedDown.getHeight());
+	return Math.max(pause.getHeight() + restart.getHeight(), speedUp.getHeight() + slowDown.getHeight());
     }
 
     public int getCompX(int x) {

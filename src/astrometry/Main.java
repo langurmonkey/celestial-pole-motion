@@ -188,8 +188,8 @@ public class Main extends BasicGame {
 	public static void main(String[] args) throws Exception {
 		container = new AppGameContainer(new Main("Celestial pole vs ICRS"));
 		// Initialize screen width and height
-		WIDTH = (int) (container.getScreenWidth() * 5f / 6f);
-		HEIGHT = (int) (container.getScreenHeight() * 5f / 6f);
+		WIDTH = (int) Math.min(1920, (container.getScreenWidth() * 5f / 6f));
+		HEIGHT = (int) Math.min(1080, (container.getScreenHeight() * 5f / 6f));
 
 		// WIDTH = WIDTH - WIDTH / 3;
 		// HEIGHT = HEIGHT - HEIGHT / 3;

@@ -10,7 +10,7 @@ sourceSets.main.java.srcDirs = ["src/"]
 mainClassName = 'astrometry.Main'
 
 dependencies {
-    compile files('lib/commons-math-2.2.jar',
+    implementation files('lib/commons-math-2.2.jar',
                     'lib/geodesy-lib.jar',
                     'lib/lwjgl.jar',
                     'lib/lwjgl_util.jar',
@@ -24,7 +24,10 @@ jar {
 }
 
 run {
+    main = project.mainClassName
     jvmArgs '-Djava.library.path=native/linux'
+    classpath = sourceSets.main.runtimeClasspath
+    classpath += files('lib/*')
 }
 
 task runWin(dependsOn: jar, type: JavaExec, description: "Runs the application on Windows") {

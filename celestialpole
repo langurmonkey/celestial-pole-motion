@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+./gradlew jar && $JAVA_HOME/bin/java -cp lib/*:build/libs/celestial-pole-motion-1.0.0.jar -Djava.library.path=native/linux astrometry.Main

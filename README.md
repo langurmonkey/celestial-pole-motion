@@ -7,6 +7,8 @@ This is a wee graphical application to **visualise the movement of the celestial
 
 ## Run from code
 
+WARN: The project won't run with some modern versions of the JVM because it uses old libraries. We recommend using AdoptOpenJDK 8 available from the [Adoptium website](https://adoptium.net/archive.html?variant=openjdk8&jvmVariant=hotspot).
+
 In order to run the application, first clone the repository.
 
 ```
